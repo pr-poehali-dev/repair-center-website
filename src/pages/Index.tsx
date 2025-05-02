@@ -13,8 +13,8 @@ const Index = () => {
     <div className="min-h-screen bg-slate-50">
       {/* Шапка */}
       <header className="bg-primary shadow-md">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-2">
+        <div className="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-center md:justify-between items-center">
+          <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <Icon name="Zap" className="text-white h-8 w-8" />
             <h1 className="text-2xl font-bold text-white">Ремастер</h1>
           </div>
@@ -38,12 +38,10 @@ const Index = () => {
           <div className="md:w-1/2 text-white mb-10 md:mb-0">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">Профессиональный ремонт техники любой сложности</h2>
             <p className="text-xl mb-8 opacity-90">Быстро, качественно, с гарантией до 1 года</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
-                Оставить заявку
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Узнать стоимость
+            <div className="flex justify-center">
+              <Button size="lg" className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white text-lg py-6 px-8 shadow-lg transform transition-all duration-300 hover:scale-105">
+                <Icon name="CalendarCheck" className="mr-3 h-6 w-6" />
+                Оставить заявку на выезд и диагностику
               </Button>
             </div>
           </div>
