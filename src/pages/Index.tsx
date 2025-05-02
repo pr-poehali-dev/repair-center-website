@@ -16,7 +16,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Icon name="Zap" className="text-white h-8 w-8" />
-            <h1 className="text-2xl font-bold text-white">ТехноСервис</h1>
+            <h1 className="text-2xl font-bold text-white">Ремастер</h1>
           </div>
           <nav className="hidden md:flex space-x-6">
             <a href="#promo" className="text-white hover:text-gray-200 transition">Акции</a>
@@ -184,7 +184,7 @@ const Index = () => {
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h2 className="text-3xl font-bold mb-4">О нашем сервисном центре</h2>
               <p className="text-gray-600 mb-4">
-                Наш сервисный центр специализируется на ремонте бытовой и цифровой техники с 2010 года. 
+                Наш сервисный центр «Ремастер» специализируется на ремонте бытовой и цифровой техники с 2010 года. 
                 За это время мы успешно восстановили работоспособность тысяч устройств и завоевали доверие клиентов.
               </p>
               <p className="text-gray-600 mb-4">
@@ -245,7 +245,7 @@ const Index = () => {
                 <Icon name="Mail" className="mr-2 h-5 w-5" />
                 <h3 className="text-xl font-semibold">Email</h3>
               </div>
-              <p className="opacity-90">info@technoservice.ru</p>
+              <p className="opacity-90">info@remaster.ru</p>
               <div className="flex mt-4 space-x-4">
                 <a href="#" className="text-white hover:text-gray-200">
                   <Icon name="Instagram" className="h-6 w-6" />
@@ -274,9 +274,9 @@ const Index = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <Icon name="Zap" className="mr-2 h-6 w-6" />
-              <p className="text-xl font-bold">ТехноСервис</p>
+              <p className="text-xl font-bold">Ремастер</p>
             </div>
-            <p className="text-gray-400 text-sm">© 2025 ТехноСервис. Все права защищены.</p>
+            <p className="text-gray-400 text-sm">© 2025 Ремастер. Все права защищены.</p>
           </div>
         </div>
       </footer>
