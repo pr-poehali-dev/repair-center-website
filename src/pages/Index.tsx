@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
+import { Badge } from '@/components/ui/badge';
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState('appliances');
@@ -18,6 +19,7 @@ const Index = () => {
             <h1 className="text-2xl font-bold text-white">ТехноСервис</h1>
           </div>
           <nav className="hidden md:flex space-x-6">
+            <a href="#promo" className="text-white hover:text-gray-200 transition">Акции</a>
             <a href="#services" className="text-white hover:text-gray-200 transition">Услуги</a>
             <a href="#advantages" className="text-white hover:text-gray-200 transition">Преимущества</a>
             <a href="#about" className="text-white hover:text-gray-200 transition">О нас</a>
@@ -51,6 +53,49 @@ const Index = () => {
               alt="Ремонт техники" 
               className="rounded-lg shadow-lg max-w-full h-auto"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Акция */}
+      <section id="promo" className="py-12 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl p-8 relative z-10 shadow-xl">
+            <div className="absolute -right-6 -top-6 bg-red-500 text-white font-bold py-2 px-6 rounded-full transform rotate-12 shadow-lg">
+              Акция!
+            </div>
+            <div className="flex flex-col md:flex-row items-center justify-between">
+              <div className="md:w-3/5 mb-6 md:mb-0">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Бесплатный выезд и диагностика</h2>
+                <p className="text-white text-lg mb-4">При заказе ремонта мастер приедет к вам и проведёт полную диагностику абсолютно бесплатно!</p>
+                <div className="flex items-center space-x-4">
+                  <div className="bg-white/20 rounded-lg p-3 text-center">
+                    <div className="text-white text-xl font-bold">Экономия</div>
+                    <div className="text-white text-lg">до 1500 ₽</div>
+                  </div>
+                  <div className="bg-white/20 rounded-lg p-3 text-center">
+                    <div className="text-white text-xl font-bold">Срок акции</div>
+                    <div className="text-white text-lg">До 30 июня</div>
+                  </div>
+                </div>
+              </div>
+              <div className="md:w-2/5 flex justify-center">
+                <div className="bg-white p-6 rounded-xl shadow-lg">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Заполните форму</h3>
+                  <div className="space-y-4">
+                    <Button className="w-full bg-primary text-white" size="lg">
+                      <Icon name="CalendarCheck" className="mr-2 h-5 w-5" />
+                      Вызвать мастера
+                    </Button>
+                    <p className="text-sm text-gray-600">Или позвоните нам:</p>
+                    <div className="text-lg font-semibold text-gray-800">+7 (999) 123-45-67</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -bottom-10 -left-10 opacity-10">
+              <Icon name="Tool" className="h-40 w-40 text-white" />
+            </div>
           </div>
         </div>
       </section>
@@ -96,9 +141,9 @@ const Index = () => {
             <TabsContent value="appliances" className="animate-fade-in">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { name: 'Ремонт холодильников', price: 'от 1200 ₽', img: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' },
-                  { name: 'Ремонт стиральных машин', price: 'от 900 ₽', img: 'https://images.unsplash.com/photo-1626806787461-102c1a7d1d0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' },
-                  { name: 'Ремонт посудомоечных машин', price: 'от 1000 ₽', img: 'https://images.unsplash.com/photo-1581622558663-b2e33377dfb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' },
+                  { name: 'Ремонт холодильников', price: 'от 1200 ₽', img: 'https://images.unsplash.com/photo-1584568694244-14fbdf83bd30?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80', promo: true },
+                  { name: 'Ремонт стиральных машин', price: 'от 900 ₽', img: 'https://images.unsplash.com/photo-1626806787461-102c1a7d1d0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80', promo: true },
+                  { name: 'Ремонт посудомоечных машин', price: 'от 1000 ₽', img: 'https://images.unsplash.com/photo-1581622558663-b2e33377dfb2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80', promo: true },
                 ].map((service, i) => (
                   <ServiceCard key={i} {...service} />
                 ))}
@@ -108,9 +153,9 @@ const Index = () => {
             <TabsContent value="digital" className="animate-fade-in">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { name: 'Ремонт смартфонов', price: 'от 700 ₽', img: 'https://images.unsplash.com/photo-1580910051074-3eb694886505?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' },
-                  { name: 'Ремонт ноутбуков', price: 'от 1200 ₽', img: 'https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' }, 
-                  { name: 'Ремонт планшетов', price: 'от 800 ₽', img: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' },
+                  { name: 'Ремонт смартфонов', price: 'от 700 ₽', img: 'https://images.unsplash.com/photo-1580910051074-3eb694886505?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80', promo: true },
+                  { name: 'Ремонт ноутбуков', price: 'от 1200 ₽', img: 'https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80', promo: true }, 
+                  { name: 'Ремонт планшетов', price: 'от 800 ₽', img: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80', promo: true },
                 ].map((service, i) => (
                   <ServiceCard key={i} {...service} />
                 ))}
@@ -120,7 +165,7 @@ const Index = () => {
             <TabsContent value="other" className="animate-fade-in">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { name: 'Диагностика', price: 'от 500 ₽', img: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' },
+                  { name: 'Диагностика', price: 'от 500 ₽', img: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80', promo: true },
                   { name: 'Обновление ПО', price: 'от 600 ₽', img: 'https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' },
                   { name: 'Срочный ремонт', price: 'от 1500 ₽', img: 'https://images.unsplash.com/photo-1581092335397-9583eb922e31?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80' },
                 ].map((service, i) => (
@@ -240,8 +285,16 @@ const Index = () => {
 };
 
 // Компонент карточки услуги
-const ServiceCard = ({ name, price, img }) => (
-  <Card className="overflow-hidden hover:shadow-lg transition duration-300">
+const ServiceCard = ({ name, price, img, promo = false }) => (
+  <Card className="overflow-hidden hover:shadow-lg transition duration-300 relative">
+    {promo && (
+      <div className="absolute top-3 right-3 z-10">
+        <Badge className="bg-yellow-500 hover:bg-yellow-600">
+          <Icon name="Sparkles" className="mr-1 h-3 w-3" />
+          Бесплатный выезд
+        </Badge>
+      </div>
+    )}
     <div className="aspect-[4/3] relative">
       <img src={img} alt={name} className="object-cover w-full h-full" />
     </div>
